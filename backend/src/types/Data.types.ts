@@ -14,3 +14,8 @@ export type EventType = {
   userId: number;
   location: string;
 }
+
+export type LoginResponse = {
+  token: string;
+  user: UserData;
+}

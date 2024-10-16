@@ -9,11 +9,11 @@ import UsersSequelize from './Users.model';
 
 class EventsSequelize extends Model<InferAttributes<EventsSequelize>,
 InferCreationAttributes<EventsSequelize>> {
-  declare id: number;
+  declare id: CreationOptional<number>;
   declare name: string;
   declare description: string;
   declare date: Date;
-  declare userId: number;
+  declare userId: CreationOptional<number>;
   declare location: string;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;

@@ -8,7 +8,7 @@ import db from './index';
 
 class UsersSequelize extends Model<InferAttributes<UsersSequelize>,
 InferCreationAttributes<UsersSequelize>> {
-  declare id: number;
+  declare id: CreationOptional<number>;
   declare name: string;
   declare email: string;
   declare password: string;

@@ -12,7 +12,7 @@ class EventsModel implements IEventModel {
 
   async getAllEvents() {
     const events = await this.model.findAll();
-
+    console.log(events);
     return events;
   }
 

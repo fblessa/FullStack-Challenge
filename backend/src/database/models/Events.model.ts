@@ -60,13 +60,12 @@ EventsSequelize.init({
 }, {
   sequelize: db,
   modelName: 'Events',
-  timestamps: true,
-})
+  timestamps: false,
+});
 
 UsersSequelize.hasMany(EventsSequelize, {
   foreignKey: 'userId',
   sourceKey: 'id',
-  as: 'events',
 });
 
 EventsSequelize.belongsTo(UsersSequelize, {

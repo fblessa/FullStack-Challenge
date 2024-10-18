@@ -52,7 +52,7 @@ UsersSequelize.init({
 }, {
   sequelize: db,
   modelName: 'Users',
-  timestamps: true,
+  timestamps: false,
 })
 
 export default UsersSequelize;

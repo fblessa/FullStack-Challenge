@@ -1,20 +1,4 @@
 services:
-  frontend:
-    container_name: app_frontend
-    build:
-      context: ./frontend
-      args:
-        NODE_ENV: ${NODE_ENV}  
-    ports:
-      - 3000:3000
-    working_dir: /frontend
-    environment:
-      - NODE_ENV=${NODE_ENV}  
-    healthcheck:
-      test: ["CMD", "lsof", "-t", "-i:3000"] 
-      timeout: 10s
-      retries: 5
-
   backend:
     container_name: app_backend
     build:

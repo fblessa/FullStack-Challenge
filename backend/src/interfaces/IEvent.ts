@@ -31,7 +31,7 @@ export interface IEventService {
 export interface IEventController {
   createEvent(req: Request, res: Response): Promise<Response<any, Record<string, any>>>;
   getAllEvents(req: Request, res: Response): Promise<Response<any, Record<string, any>>>;
-  findByEventName(req: Request, res: Response): Promise<Response<any, Record<string, any>>>;
+  findByEventId(req: Request, res: Response): Promise<Response<any, Record<string, any>>>;
   updateEventData(req: Request, res: Response): Promise<Response<any, Record<string, any>>>;
   requestDeleteEvent(req: Request, res: Response): Promise<Response<any, Record<string, any>>>;
 }

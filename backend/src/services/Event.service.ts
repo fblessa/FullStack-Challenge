@@ -8,9 +8,8 @@ class EventsService implements IEventService {
   async createEvent({ name, description, date, location }: EventType) {
     try {
       if (!name || !description || !date || !location) return { status: 'BAD_REQUEST', data: { message: 'Todos os campos são obrigatórios.' }};
-
-    const event = await this.model.createEvent(name, description, date, location);
-    return { status: 'CREATED', data: event };
+      const event = await this.model.createEvent(name, description, date, location);
+      return { status: 'CREATED', data: event };
     } catch (error) {
       return { status: 'INTERNAL_SERVER_ERROR', data: { message: 'Erro ao criar evento.' }};
     }
@@ -19,9 +18,10 @@ class EventsService implements IEventService {
   async getAllEvents() {
     try {
       const events = await this.model.getAllEvents();
+      console.log(events);
       return { status: 'SUCCESSFUL', data: events };
-    } catch (error) {
-      return { status: 'INTERNAL_SERVER_ERROR', data: { message: 'Erro ao buscar eventos.' }};
+    } catch (error: any) {
+      return { status: 'INTERNAL_SERVER_ERROR', data: { message: error.message }};
     }
   }
 
@@ -55,3 +55,5 @@ class EventsService implements IEventService {
     }
   }
 }
+
+export default EventsService;

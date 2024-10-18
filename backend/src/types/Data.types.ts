@@ -11,7 +11,7 @@ export type EventType = {
   name: string;
   description: string;
   date: Date;
-  userId: number;
+  userId?: number;
   location: string;
 }
 

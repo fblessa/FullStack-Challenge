@@ -1,12 +1,10 @@
 import { IUserModel } from "../interfaces/IUsers";
 import { UserData } from "../types/Data.types";
-import { createToken, createEmailToken, verifyToken } from "../utils/jwt";
-import { validatePassword, validateUser, validateConfirmEmailToken } from "../middlewares/validateLogin";
+import { createToken, createEmailToken } from "../utils/jwt";
+import { validatePassword, validateUser } from "../middlewares/validateLogin";
 import { IUserService } from "../interfaces/IUsers";
 import UserModel from "../models/UsersModel";
 import bcrypt from 'bcryptjs';
-import { ServiceResponse } from "../types/Service.response";
-import UsersSequelize from "../database/models/Users.model";
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS ? parseInt(process.env.SALT_ROUNDS) : 10;
 

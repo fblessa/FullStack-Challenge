@@ -32,8 +32,7 @@ Para clonar o repositório para a sua máquina local, siga os passos abaixo:
 1. Abra o terminal (ou Git Bash).
 2. Navegue até o diretório onde você deseja clonar o repositório.
 3. Execute o seguinte comando:
-   SSH
-   git@github.com:fblessa/FullStack-Challenge.git
+  git clone git@github.com:fblessa/FullStack-Challenge.git
 
 4. instale o `dot env` na raiz com `npm install` e copiar os arquivos da "env.example" e criar o própio arquivo .env
 5. Entre na pasta `backend` e instale todas as dependências com `npm install`

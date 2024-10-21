@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base {} */
+
+h1.ce-header{
+  @apply text-5xl font-bold
+}
+h2.ce-header{
+  @apply text-4xl font-semibold
+}
+h3.ce-header{
+  @apply text-3xl font-semibold
+}
+h4.ce-header{
+  @apply text-2xl font-semibold
+}
+h5.ce-header{
+  @apply text-xl font-semibold
+}
+h6.ce-header{
+  @apply text-lg font-semibold
+}

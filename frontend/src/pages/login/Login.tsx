@@ -37,18 +37,9 @@ function Login() {
       setToken(token);
 
       localStorage.setItem('token', token);
-
-      localStorage.setItem('role', user.role);
-
-      localStorage.setItem('userId', user.id);
-
       localStorage.setItem('userEmail', user.email);
 
-      if (user.role === 'ADMIN') {
-        navigate('/admin');
-      } else {
-        navigate('/courses');
-      }
+    //  navigate('/events');
     } catch (error: any) {
       if (error.isAxiosError) {
         console.log(error);

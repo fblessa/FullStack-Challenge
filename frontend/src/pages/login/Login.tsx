@@ -22,7 +22,7 @@ function Login() {
     const token = localStorage.getItem('token');
 
    if (token) {
-      navigate('/create-event');
+      navigate('/events');
    }
   }, [navigate]);
 
@@ -39,7 +39,7 @@ function Login() {
       localStorage.setItem('token', token);
       localStorage.setItem('userEmail', user.email);
 
-      navigate('/create-event');
+      navigate('/events');
     } catch (error: any) {
       if (error.isAxiosError) {
         console.log(error);

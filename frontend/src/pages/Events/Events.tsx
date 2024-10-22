@@ -4,12 +4,10 @@ import EventsBackground from '../../components/EventsBackground';
 import { requestData, setToken } from '../../services/requests';
 import { EventType } from '../../types/eventTypes';
 import { Card, CardBody } from '@material-tailwind/react';
-import LoadingCard from '../../components/LoadindCard';
 import WhiteButton from '../../components/WhiteButton';
 
 function Events() {
   const [events, setEvents] = useState<EventType[]>([]);
-  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,14 +21,11 @@ function Events() {
     setToken(token);
 
     async function fetchEvents() {
-      setLoading(true);
       try {
         const data = await requestData('/events');
         setEvents(data);
-        setLoading(false);
       } catch (error) {
         console.error(error);
-        setLoading(false);
       }
     }
 

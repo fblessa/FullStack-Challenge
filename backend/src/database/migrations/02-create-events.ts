@@ -19,12 +19,12 @@ export default {
         allowNull: false
       },
       date: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: false
       },
       userId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         field: 'user_id',
         references: {
           model: 'Users',

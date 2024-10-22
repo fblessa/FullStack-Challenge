@@ -172,7 +172,7 @@ function CreateAccount() {
         >
           Cadastrar
         </OrangeButton>
-        <p className="self-center">{('Ja possui conta?')}</p>
+        <p className="self-center">Já possui conta?</p>
         <WhiteButton
           type="button"
           onClick={ () => navigate('/') }

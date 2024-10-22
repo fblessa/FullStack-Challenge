@@ -19,11 +19,11 @@ function Login() {
 
   useEffect(() => {
     document.title = 'Login';
-  //  const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
 
-  //  if (token) {
-  //    navigate('/events');
-   // }
+   if (token) {
+      navigate('/create-event');
+   }
   }, [navigate]);
 
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
@@ -39,7 +39,7 @@ function Login() {
       localStorage.setItem('token', token);
       localStorage.setItem('userEmail', user.email);
 
-    //  navigate('/events');
+      navigate('/create-event');
     } catch (error: any) {
       if (error.isAxiosError) {
         console.log(error);

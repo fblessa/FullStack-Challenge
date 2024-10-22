@@ -10,7 +10,7 @@ export type EventType = {
   id?: number;
   name: string;
   description: string;
-  date: Date;
+  date: string;
   userId?: number;
   location: string;
 }

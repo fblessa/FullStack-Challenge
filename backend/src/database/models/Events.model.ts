@@ -12,7 +12,7 @@ InferCreationAttributes<EventsSequelize>> {
   declare id: CreationOptional<number>;
   declare name: string;
   declare description: string;
-  declare date: Date;
+  declare date: string;
   declare userId: CreationOptional<number>;
   declare location: string;
   declare createdAt: CreationOptional<Date>;
@@ -35,12 +35,12 @@ EventsSequelize.init({
     allowNull: false,
   },
   date: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   userId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
     field: 'user_id',
   },
   location: {

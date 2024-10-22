@@ -1,17 +1,17 @@
-import { IEventService } from "../interfaces/IEvent";
+import { IEventModel, IEventService } from "../interfaces/IEvent";
 import { EventType } from "../types/Data.types";
 import EventsModel from "../models/EventsModel";
 
 class EventsService implements IEventService {
-  private model = new EventsModel();
+  private model: IEventModel = new EventsModel();
 
   async createEvent({ name, description, date, location }: EventType) {
     try {
       if (!name || !description || !date || !location) return { status: 'BAD_REQUEST', data: { message: 'Todos os campos são obrigatórios.' }};
-      const event = await this.model.createEvent(name, description, date, location);
-      return { status: 'CREATED', data: event };
-    } catch (error) {
-      return { status: 'INTERNAL_SERVER_ERROR', data: { message: 'Erro ao criar evento.' }};
+      await this.model.createEvent({name, description, date, location});
+      return { status: 'CREATED', data: { message: 'Evento criado com sucesso.' } };
+    } catch (error: any) {
+      return { status: 'INTERNAL_SERVER_ERROR', data: { message: error.message }};
     }
   }
 
@@ -35,7 +35,7 @@ class EventsService implements IEventService {
     }
   }
 
-  async updateEvent(id: number, name: string, description: string, date: Date, location: string) {
+  async updateEvent(id: number, name: string, description: string, date: string, location: string) {
     try {
       const event = await this.model.updateEvent(id, name, description, date, location);
       if (event[0] === 0) return { status: 'NOT_FOUND', data: { message: 'Evento não encontrado.' }};
